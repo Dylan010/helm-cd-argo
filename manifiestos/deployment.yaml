@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: desafio-15-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: desafio-15
+  template:
+    metadata:
+      labels:
+        app: desafio-15
+    spec:
+      containers:
+      - name: desafio-15
+        image: dy010101/desafio-15:latest
+        ports:
+        - containerPort: 5000

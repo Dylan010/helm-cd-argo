@@ -1,0 +1,10 @@
+replicaCount: 3
+
+image:
+  repository: dy010101/desafio-15
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 5000

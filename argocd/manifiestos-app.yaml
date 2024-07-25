@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: desafio-15-manifiestos
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Dylan010/helm-cd-argo
+    targetRevision: HEAD
+    path: manifiestos
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: desafio-15-manifiestos
+  syncPolicy:
+    automated: false
