@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: manifests-app
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/Dylan010/helm-cd-argo.git'
+    path: manifiestos
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: manifests-namespace
+  syncPolicy:
+    automated: {}
